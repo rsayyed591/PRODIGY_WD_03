@@ -41,7 +41,7 @@ const checkWin = ()=>{
 }
 
 // Game Logic
-music.play()
+music.play();
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector('.boxtext');
@@ -79,5 +79,8 @@ reset.addEventListener('click', ()=>{
     document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
     count = 0;
+    Array.from(boxes).forEach(box => {
+        box.classList.remove('winner');
+    });
 })
 
